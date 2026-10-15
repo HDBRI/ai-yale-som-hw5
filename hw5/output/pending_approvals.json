@@ -1,0 +1,97 @@
+[
+  {
+    "id": "purchase-101",
+    "kind": "purchase",
+    "ref_id": 101,
+    "amount": null,
+    "reason": "Reprint 1 unit of SKU CC-TEE-WHITE in size S from Bulldog Print Co.; vendor lead time is 5 days.",
+    "ticket_id": 101,
+    "prepared_by": "inventory",
+    "run_id": "2d24aefada1f",
+    "created_at": "2026-10-14T21:45:25+00:00",
+    "status": "rejected",
+    "decided_by": "Ria Vijh",
+    "decided_at": "2026-10-14T21:46:40+00:00",
+    "result": {
+      "note": null
+    }
+  },
+  {
+    "id": "invoice_payment-501",
+    "kind": "invoice_payment",
+    "ref_id": 501,
+    "amount": 840.0,
+    "reason": "Conditional human approval only: invoice 501 pays the Bulldog Print Co. reprint blocking this order. Rent lease 1 has priority because $2,400 is due 2026-09-02; after rent, paying $840 would leave $160, below the required $500 reserve. Do not approve unless the human explicitly authorizes breaching the reserve.",
+    "ticket_id": 101,
+    "prepared_by": "boss",
+    "run_id": "2d24aefada1f",
+    "created_at": "2026-10-14T21:46:22+00:00",
+    "status": "rejected",
+    "decided_by": "Ria Vijh",
+    "decided_at": "2026-10-14T21:46:42+00:00",
+    "result": {
+      "note": null
+    }
+  },
+  {
+    "id": "invoice_payment-501",
+    "kind": "invoice_payment",
+    "ref_id": 501,
+    "amount": 840.0,
+    "reason": "Hold for now: invoice 501 is overdue from 2026-08-28, but after prioritized rent the checking balance is $1,000.00; paying $840.00 would leave $160.00 ($1,000.00 \u2212 $840.00), below the $500.00 reserve. Human review is needed before any later payment.",
+    "ticket_id": 101,
+    "prepared_by": "accounting",
+    "run_id": "f01404a71b07",
+    "created_at": "2026-10-14T21:47:30+00:00",
+    "status": "rejected",
+    "decided_by": "Ria Vijh",
+    "decided_at": "2026-10-14T21:52:28+00:00",
+    "result": {
+      "note": null
+    }
+  },
+  {
+    "id": "rent_payment-1",
+    "kind": "rent_payment",
+    "ref_id": 1,
+    "amount": 2400.0,
+    "reason": "Human approval required for lease 1 rent payable to Elm City Properties, due 2026-09-02. The notice matches the lease and no prior payment is recorded; after payment, checking remains at $1,000.00, above the $500.00 reserve.",
+    "ticket_id": 102,
+    "prepared_by": "boss",
+    "run_id": "f01404a71b07",
+    "created_at": "2026-10-14T21:47:31+00:00",
+    "status": "approved",
+    "decided_by": "Ria Vijh",
+    "decided_at": "2026-10-14T21:47:44+00:00",
+    "result": {
+      "ok": true,
+      "payment_id": 1,
+      "kind": "rent",
+      "ref_id": 1,
+      "amount": 2400.0,
+      "account": "checking",
+      "paid_at": "2026-08-31",
+      "approved_by": "Ria Vijh",
+      "balance_after": 1000.0,
+      "lease_next_due": "2026-10-02"
+    }
+  },
+  {
+    "id": "discount-103",
+    "kind": "discount",
+    "ref_id": 103,
+    "amount": 25.0,
+    "reason": "Approve the 25% bulk discount for 20 hoodies. If approved, the price is $43.50 each, above the $22.00 unit-cost floor; the total would be $870.00 for 20 or $348.00 for the 8 currently available.",
+    "ticket_id": 103,
+    "prepared_by": "boss",
+    "run_id": "978111ef70e5",
+    "created_at": "2026-10-14T21:51:17+00:00",
+    "status": "approved",
+    "decided_by": "Ria Vijh",
+    "decided_at": "2026-10-14T21:51:43+00:00",
+    "result": {
+      "ok": true,
+      "note": "Approved; no cash moves for this kind."
+    }
+  }
+]

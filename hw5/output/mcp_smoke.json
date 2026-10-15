@@ -1,0 +1,51 @@
+{
+  "server": "campus-customs",
+  "config": ".mcp.json",
+  "database": "data/campus_customs_new.db",
+  "tested_via": "Claude Code (vibe coder) connected to the MCP server over stdio",
+  "date": "2026-10-14",
+  "tests": [
+    {
+      "ticket": 101,
+      "prompt": "Can you check the current inventory for the Classic Bulldog Tee (SKU: CC-TEE-WHITE) in size Small and confirm whether we have enough stock to fulfill an order?",
+      "tool": "check_stock",
+      "arguments": {"sku": "CC-TEE-WHITE", "size": "S", "qty_needed": 1},
+      "output": {"found": true, "sku": "CC-TEE-WHITE", "name": "Classic Bulldog Tee", "size": "S", "location": "Aisle B", "qty_on_hand": 0, "qty_needed": 1, "can_fill_from_stock": false, "shortfall": 1},
+      "db_check": {
+        "query": "SELECT * FROM inventory WHERE sku='CC-TEE-WHITE' AND size='S'",
+        "row": ["CC-TEE-WHITE", "Classic Bulldog Tee", "S", 0, "Aisle B"],
+        "matches": true,
+        "note": "qty_needed = 1 comes from tickets.qty for ticket 101."
+      }
+    },
+    {
+      "ticket": 102,
+      "prompt": "For lease ID 1, can you find the upcoming rent payment amount and due date, and verify whether the available checking account balance is sufficient to pay it?",
+      "tool": "get_rent_due",
+      "arguments": {"lease_id": 1},
+      "output": {"found": true, "lease_id": 1, "space_name": "Chapel Street shop", "landlord": "Elm City Properties", "monthly_rent": 2400, "next_due": "2026-09-02", "date_today": "2026-08-31", "days_until_due": 2, "notes": null, "cash_accounts": [{"name": "checking", "balance": 3400, "as_of": "2026-08-31", "balance_after_rent": 1000}]},
+      "db_check": {
+        "queries": {
+          "SELECT * FROM leases WHERE id=1": [1, "Chapel Street shop", "Elm City Properties", 2400.0, "2026-09-02", null],
+          "SELECT date_today FROM desk": ["2026-08-31"],
+          "SELECT * FROM cash_accounts": ["checking", 3400.0, "2026-08-31"]
+        },
+        "matches": true,
+        "note": "days_until_due = 2026-09-02 minus 2026-08-31 = 2; balance_after_rent = 3400 - 2400 = 1000."
+      }
+    },
+    {
+      "ticket": 103,
+      "prompt": "Can you pull the unit cost and retail price for the Navy Bulldog Hoodie (SKU: CC-HOOD-NAVY) and calculate the maximum discount we could offer without selling below cost?",
+      "tool": "get_sku_pricing",
+      "arguments": {"sku": "CC-HOOD-NAVY"},
+      "output": {"found": true, "sku": "CC-HOOD-NAVY", "unit_cost": 22, "list_price": 58, "margin_per_unit": 36, "break_even_price": 22, "max_discount_pct_before_loss": 62.1},
+      "db_check": {
+        "query": "SELECT * FROM pricing WHERE sku='CC-HOOD-NAVY'",
+        "row": ["CC-HOOD-NAVY", 22.0, 58.0],
+        "matches": true,
+        "note": "margin = 58 - 22 = 36; max discount = (58 - 22) / 58 = 62.07%, rounded to 62.1. In the database this SKU is named 'Basic Hoodie Big Yale' (inventory.name), not 'Navy Bulldog Hoodie'; the tool looks it up by SKU, so the result is unaffected."
+      }
+    }
+  ]
+}

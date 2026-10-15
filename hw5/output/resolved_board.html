@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Customs: Resolved Board</title>
+<style>
+  :root { --bg:#0b0b0d; --panel:#16141a; --line:#3a2a36; --pink:#ff4fa3; --pink2:#ff9ccb; --text:#f5eef2; --muted:#b9a7b2; --ok:#7be0b0; }
+  * { box-sizing: border-box; }
+  body { margin:0; background: radial-gradient(900px 400px at 50% -10%, rgba(255,79,163,.18), transparent 60%), var(--bg);
+         color:var(--text); font:15px/1.55 "Segoe UI", system-ui, sans-serif; }
+  header { display:flex; align-items:center; gap:20px; padding:22px 34px; border-bottom:3px solid var(--pink);
+           background: linear-gradient(90deg, rgba(11,11,13,.96) 45%, rgba(11,11,13,.7)), url("assets/evans-hall.jpg") center/cover; }
+  .logo { background:#fff; border-radius:12px; padding:6px 10px; box-shadow:0 0 0 3px var(--pink); }
+  .logo img { height:60px; display:block; }
+  h1 { margin:0; font-size:28px; } h1 span { color:var(--pink); font-style:italic; }
+  .sub { color:var(--pink2); }
+  main { max-width:1200px; margin:0 auto; padding:26px 34px 60px; }
+  .totals { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:26px; }
+  .tot { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  .tot b { display:block; font-size:12px; color:var(--pink2); text-transform:uppercase; letter-spacing:.6px; }
+  .tot .v { font-family:Consolas, monospace; font-size:26px; font-weight:800; color:var(--pink); }
+  section { background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--pink); border-radius:16px; padding:20px 22px; margin-bottom:26px; }
+  section h2 { margin:0 0 4px; } .stamp { display:inline-block; border:3px solid var(--pink); color:var(--pink); font-weight:900; letter-spacing:3px;
+    padding:0 10px; border-radius:6px; transform:rotate(-6deg); margin-left:10px; font-size:14px; }
+  .meta { color:var(--muted); margin-bottom:10px; }
+  .shots { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  figure { margin:0; } figure img { width:100%; border-radius:12px; border:2px solid #4a1733; display:block; }
+  figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  .money { color:var(--ok); font-family:Consolas, monospace; } .neg { color:#ff8fa3; }
+  @media (max-width:800px){ .shots,.totals{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="assets/som-logo.jpg" alt="Yale School of Management"></div>
+  <div><h1>Campus Customs <span>Night Desk</span>: resolved board</h1>
+  <div class="sub">Task 9 · screenshots of the React board (<code>frontend/</code>, http://localhost:5173) as each ticket resolved · 2026-10-14</div></div>
+</header>
+<main>
+  <div class="totals">
+    <div class="tot"><b>Starting checking</b><span class="v">$3,400.00</span></div>
+    <div class="tot"><b>Ending checking</b><span class="v">$1,000.00</span></div>
+    <div class="tot"><b>Paid out</b><span class="v">$2,400.00</span><div style="color:var(--muted);font-size:12px">rent, lease 1 (ticket 102)</div></div>
+    <div class="tot"><b>Tickets resolved</b><span class="v">3 / 3</span></div>
+  </div>
+
+  <section>
+    <h2>#101 · Bulldog tee <span class="stamp">RESOLVED</span></h2>
+    <div class="meta">Boss → Inventory → Accounting (→ Inventory) → Customer Service · invoice 501 ($840) and the reprint purchase declined (reserve rule) · cash change <span class="money">$0.00</span></div>
+    <div class="shots">
+      <figure><img src="board_screens/101_running.jpg" alt="Ticket 101 while the team is working"><figcaption>While running: the Boss is at work, other desks are "standing by", and the ON AIR light is on.</figcaption></figure>
+      <figure><img src="board_screens/101_resolved.jpg" alt="Ticket 101 resolved"><figcaption>Resolved: RESOLVED stamp on the stub, Facilities greyed out ("not needed"), two declines in the ledger, checking still $3,400.</figcaption></figure>
+      <figure><img src="board_screens/101_report.jpg" alt="Ticket 101 shift report"><figcaption>Shift report: what each agent did, its tools, and who it passed work to.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>#102 · Rent due <span class="stamp">RESOLVED</span></h2>
+    <div class="meta">Boss → Facilities → Accounting (+ Boss → Accounting) · rent $2,400 approved by Ria Vijh · cash change <span class="money neg">−$2,400.00</span> ($3,400 → $1,000)</div>
+    <div class="shots">
+      <figure><img src="board_screens/102_resolved.jpg" alt="Ticket 102 resolved, cash $1,000"><figcaption>Right after Approve: the register rolled to $1,000.00 with ▼ $2,400.00, the stub is stamped RESOLVED, and Inventory and Customer Service are greyed out.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>#103 · Bulk hoodie discount <span class="stamp">RESOLVED</span></h2>
+    <div class="meta">Boss → Inventory → Accounting (→ Inventory) → Customer Service (→ Inventory) · 25% bulk discount ($43.50/unit) approved · cash change <span class="money">$0.00</span></div>
+    <div class="shots">
+      <figure><img src="board_screens/103_resolved.jpg" alt="Ticket 103 resolved"><figcaption>All three stubs stamped RESOLVED, the sign-off tray empty, and the ledger showing every decision. Checking $1,000.00.</figcaption></figure>
+      <figure><img src="board_screens/103_report.jpg" alt="Ticket 103 shift report"><figcaption>Shift report for 103: Inventory ran 3 times (the ×3 chips), and the draft reply to Yale AI Club is on the postcard.</figcaption></figure>
+    </div>
+  </section>
+</main>
+</body>
+</html>

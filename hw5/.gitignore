@@ -1,0 +1,13 @@
+# secrets
+.env
+!.env.example
+frontend/.env
+# python
+.venv/
+__pycache__/
+*.pyc
+*.json.tmp
+# node
+node_modules/
+dist/
+*.tsbuildinfo

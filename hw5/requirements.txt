@@ -1,0 +1,6 @@
+# One virtual environment runs everything: the MCP server, the agents and the FastAPI backend.
+fastmcp>=4.1
+pydantic-ai-slim[openai,mcp]>=2.56
+python-dotenv
+fastapi
+uvicorn[standard]
