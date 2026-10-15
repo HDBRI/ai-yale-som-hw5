@@ -1,6 +1,6 @@
 # Campus Customs Night Desk: dashboard design
 
-**Run it:** start the backend (`cd backend && uvicorn main:app --reload --port 8000`), then the board (`cd frontend && npm run dev`). It opens at http://localhost:5173 and talks to the backend at http://localhost:8000 (`frontend/.env` → `VITE_API_URL`). The backend allows the Vite origin through CORS (`FRONTEND_ORIGINS` in `backend/main.py`).
+**Run it:** start the backend (`cd backend && uvicorn main:app --reload --port 8000`), then the board (`cd frontend && npm run dev`). It opens at http://localhost:5173 and talks to the backend at http://localhost:8000 (the default in `frontend/src/api.ts`; override with `VITE_API_URL` in `frontend/.env`, see `frontend/.env.example`). The backend allows the Vite origin through CORS (`FRONTEND_ORIGINS` in `backend/main.py`).
 
 ## The idea: a shop counter after closing time
 Campus Customs is a small shop on Chapel Street, so the dashboard is designed as its **back-office desk at night**: black lacquer, neon pink signage, warm desk lamps that switch on when someone is working. It follows our black-and-pink style and has the Yale SOM logo in the header, Evans Hall behind the title bar, and an Evans Hall photo under the till. The goal was a screen that feels like a place, not a spreadsheet, so a person enjoys sitting at it while five agents work.

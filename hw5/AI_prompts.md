@@ -1,5 +1,9 @@
 # HW5 AI Prompts (prompt log)
 
+**Student:** Ria Vijh · **Course:** AI, Yale SOM · **Coding assistant:** Claude Code (Claude Opus 5.5), one session on 2026-10-14
+
+Each task lists its main prompt **verbatim** (typos kept), followed by any follow-up prompts that changed the work. Clarifying questions and file-housekeeping messages are left out.
+
 ## Task 1 — Set up HW5 folder & prompt log
 
 **Prompt:**
@@ -60,5 +64,5 @@
 ## Task 11 — Submit to GitHub
 
 **Prompt:**
-> Expected file layout: [screenshot: hw5/ with AI_prompts.md, requirements.txt, .env.example, .gitignore, .mcp.json, README.md, data/ (campus_customs.db, campus_customs_new.db), mcp_server/ (server.py, README.md), frontend/, backend/ (main.py, models.py, prompts/ boss.md, inventory.md, accounting.md, facilities.md, customer_service.md), output/ (harness.md, mcp_smoke.json, desk_tickets.html, design.md, resolved_tickets.json, resolved_board.html, audit_trail.json, github_url.txt)]. README should explain: copy original DB to the working copy when you need a clean run, start MCP server, start FastAPI backend, start the React board, reset the DB before a full three-ticket run.
+> Expected file layout: [screenshot, transcribed: hw5/ with AI_prompts.md, requirements.txt, .env.example, .gitignore, .mcp.json, README.md, data/ (campus_customs.db, campus_customs_new.db), mcp_server/ (server.py, README.md), frontend/, backend/ (main.py, models.py, prompts/ boss.md, inventory.md, accounting.md, facilities.md, customer_service.md), output/ (harness.md, mcp_smoke.json, desk_tickets.html, design.md, resolved_tickets.json, resolved_board.html, audit_trail.json, github_url.txt)]. README should explain: copy original DB to the working copy when you need a clean run, start MCP server, start FastAPI backend, start the React board, reset the DB before a full three-ticket run.
 > Push the code to a public GitHub repository so graders can clone it. Submit the repo URL to Canvas & also put it in output/github_url.txt. Do not push the real .env to the Github repo. Include both database files under data/ (the original & your working copy) so graders can run your app easily.

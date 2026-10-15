@@ -13,7 +13,7 @@ Five PydanticAI agents (Boss, Inventory, Accounting, Facilities, Customer Servic
 | `mcp_server/server.py` | FastMCP server: 14 tools (11 read, 3 write). See `mcp_server/README.md`. |
 | `backend/` | Agents (`agents/`, one file per role), prompts (`prompts/*.md`), data types (`models.py`), the MCP gate (`mcp_client.py`), FastAPI routes (`main.py`). |
 | `frontend/` | The React Night Desk board. |
-| `output/` | Harness, MCP smoke test, ticket plan vs actual + cash + reflection (`desk_tickets.html`), design notes, resolved tickets, board screenshots, audit trail, GitHub URL. |
+| `output/` | Harness, MCP smoke test, ticket plan vs actual + cash + reflection (`desk_tickets.html`), design notes, resolved tickets, board screenshots (`board_screens/`), audit trail, the approvals queue (`pending_approvals.json`), GitHub URL. |
 | `AI_prompts.md` | Every prompt used to build this, task by task. |
 
 ## Setup (once)
@@ -103,7 +103,7 @@ The board opens in your browser and calls the backend at http://localhost:8000. 
 3. Type your name under **Signing as**, then **Approve** or **Decline** each cheque in the sign-off tray. An approved payment rolls the cash register down.
 4. Repeat for **#102** and **#103**.
 
-What happened in our run (checking **$3,400 → $1,000**: rent of $2,400 paid on 102, nothing else moved) is documented in `output/desk_tickets.html` (Actual, Cash and Reflection tabs), `output/resolved_tickets.json`, `output/resolved_board.html` and `output/audit_trail.json`. The audit trail is append-only, so new runs add to it.
+What happened in our run (checking **$3,400 → $1,000**: rent of $2,400 paid on 102, nothing else moved) is documented in `output/desk_tickets.html` (Actual, Cash and Reflection tabs), `output/resolved_tickets.json`, `output/resolved_board.html` and `output/audit_trail.json`. The audit trail is append-only, so new runs add to it. Entries before the `db_reset` at 2026-10-14T21:44:12Z are setup tests (route tests, an early 102 run and a run killed by a server reload); the graded run comes after it.
 
 There is also a command-line runner: `python -m backend.run --ticket 101`, with `--dry-run` to block every write.
 

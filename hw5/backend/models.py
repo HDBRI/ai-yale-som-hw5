@@ -96,7 +96,7 @@ class AuditEntry(BaseModel):
     step: int | None = None
     event: str  # run_start, user_prompt, model_request, model_response, tool_results,
     #             mcp_tool_call, mcp_tool_blocked, delegation, delegation_refused,
-    #             final_output, error, run_end, approval_prepared, human_approved,
+    #             final_output, error, run_end, ticket_run_start, approval_prepared, human_approved,
     #             human_rejected, human_approval_failed, db_reset
     model: str | None = None
     details: dict[str, Any] = Field(default_factory=dict)

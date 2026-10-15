@@ -187,7 +187,7 @@
         <div class="what">Confirms S has <b>0</b> on hand (short by 1), lists M 5 / L 3 / XL 2 as alternatives, and finds that the reprint is tied to <b>invoice 501 ($840, 3 days overdue)</b> with Bulldog Print Co (5-day lead). It gives <b>no restock date</b> because the vendor's bill is unpaid.</div></div>
       <div class="hop"><div class="n">2</div>
         <div class="who">Boss <span class="arrow">→</span> Accounting<small>"Can we pay overdue invoice 501 so the reprint starts?"</small></div>
-        <div class="what">Checks the whole cash picture: $3,400 in checking vs. $840 (invoice 501) + $2,400 (rent due 9/2) = $3,240, which would leave only <b>$160, below the $500 reserve</b>. Rent comes first under the priority rule, so Accounting <b>prepares</b> invoice 501 under <b>approvals_needed</b> marked "hold" for the human. <b>No agent pays.</b> Cash only moves if a human clicks Approve on the dashboard.</div></div>
+        <div class="what">Checks the whole cash picture: $3,400 in checking vs. $840 (invoice 501) + $2,400 (rent due 9/2) = $3,240, which would leave only <b>$160, below the $500 reserve</b>. Rent comes first under the priority rule, so Accounting <b>prepares</b> invoice 501 under <b>approvals_needed</b> marked "hold" for the human. <b>No agent pays.</b> Cash only moves if a human clicks Approve on the dashboard <i>(wording updated in Task 7)</i>.</div></div>
       <div class="hop"><div class="n">3</div>
         <div class="who">Boss <span class="arrow">→</span> Customer Service<small>"Tell Tauhid the options."</small></div>
         <div class="what">Drafts a reply: size S is out right now; M, L or XL can go today; or he can wait for the reprint, with timing to be confirmed. It does <b>not</b> mention the unpaid invoice or promise a date. Ticket set to <code>waiting</code>.</div></div>
@@ -285,10 +285,10 @@
         <div class="who">Boss <span class="arrow">→</span> Facilities<small>"Is this rent notice genuine and correct?"</small></div>
         <div class="what">Compares the notice with lease 1: sender Elm City Properties = landlord ✓; "due in 2 days" from 8/31 = 9/2 = <code>next_due</code> ✓; amount not stated, so it uses the lease's $2,400; <code>list_payments</code> shows no rent paid yet ✓. The notice is <b>genuine</b>.</div></div>
       <div class="hop"><div class="n">2</div>
-        <div class="who">Facilities <span class="arrow">→</span> Accounting<small>"Rent for lease 1, $2,400 due 9/2, verified; pay it if approved."</small></div>
+        <div class="who">Facilities <span class="arrow">→</span> Accounting<small>"Rent for lease 1, $2,400 due 9/2, verified; prepare it for approval."</small></div>
         <div class="what">Rent is priority #1. $3,400 − $2,400 = <b>$1,000, above the $500 reserve</b>. Accounting <b>prepares</b> a rent payment of $2,400 under <b>approvals_needed</b> (status <code>needs_approval</code>, ticket <code>waiting</code>). Agents can't pay. When the human clicks <b>Approve</b>, the dashboard route calls <code>record_payment(rent, 1, 2400, checking)</code>: balance → $1,000, next_due → 2026-10-02, ticket → <code>resolved</code>.</div></div>
     </div>
-    <p style="margin:12px 0 0;color:var(--muted)">This shows the team's full connectivity: the payment request goes <b>specialist to specialist</b> (Facilities → Accounting) without coming back through the Boss.</p>
+    <p style="margin:12px 0 0;color:var(--muted)"><i>Payment wording updated in Task 7, when payments became human-only.</i> This shows the team's full connectivity: the payment request goes <b>specialist to specialist</b> (Facilities → Accounting) without coming back through the Boss.</p>
   </div>
 
   <div class="card">
