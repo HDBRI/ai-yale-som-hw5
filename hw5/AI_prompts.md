@@ -57,7 +57,7 @@
 **Prompt:**
 > Task 10 - Open output/desk_tickets.html & fill teh reflections tab. Answer in your own vibe & be detailed & thorough - 1. How would you evaluate the performance of the agents on each ticket & why? 2. For each ticket, how did Actual compare to the Expected plan you wrote earlier? 3. what would have been simpler as one agent with tools - & why? 4. Describe 3 new problems Campus customs might face that this agent team could solve with the tools you built, 5. Describe three new problems Campus customs might face that this agent team cpuld not solve with the tools you built, & explain the tools & agents you would need to solve them. Tie every answer to this app & the 3 tickets you ran - use the ticket tabs & the cash tab on the same page as your evdence. Generic AI essays without campus customs details will score low.
 
-## Task 11 — Submit: public GitHub repo
+## Task 11 — Submit to GitHub
 
 **Prompt:**
 > Expected file layout: [screenshot: hw5/ with AI_prompts.md, requirements.txt, .env.example, .gitignore, .mcp.json, README.md, data/ (campus_customs.db, campus_customs_new.db), mcp_server/ (server.py, README.md), frontend/, backend/ (main.py, models.py, prompts/ boss.md, inventory.md, accounting.md, facilities.md, customer_service.md), output/ (harness.md, mcp_smoke.json, desk_tickets.html, design.md, resolved_tickets.json, resolved_board.html, audit_trail.json, github_url.txt)]. README should explain: copy original DB to the working copy when you need a clean run, start MCP server, start FastAPI backend, start the React board, reset the DB before a full three-ticket run.
